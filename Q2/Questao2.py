@@ -28,8 +28,8 @@ def roda_e_plota(cir, backend = "qasm_simulator"):
   job = execute(cir, be, shots=10)
   result = job.result()
   counts = result.get_counts(cir)
-  print(counts)
   plot_histogram([counts])
+  return counts
 
 def circuito_Y():
   q = QuantumRegister(2, 'q')
@@ -64,7 +64,9 @@ def circuito_Y():
   circuit.measure(q[1], c[1])
   
   
-  roda_e_plota(circuit)
+  resposta = roda_e_plota(circuit)
+  
+  print("Os resultados para o operador Y foram: {} \n".format(resposta))
   
 def circuito_ZX():
   q = QuantumRegister(2, 'q')
@@ -99,7 +101,9 @@ def circuito_ZX():
   circuit.measure(q[1], c[1])
   
   
-  roda_e_plota(circuit)
+  resposta = roda_e_plota(circuit)
+  
+  print("Os resultados para o operador ZX foram: {} \n".format(resposta))
 
 def circuito_mY():
   q = QuantumRegister(2, 'q')
@@ -134,7 +138,9 @@ def circuito_mY():
   circuit.measure(q[1], c[1])
   
   
-  roda_e_plota(circuit)
+  resposta = roda_e_plota(circuit)
+  
+  print("Os resultados para o operador mY foram: {} \n".format(resposta))
 
 def circuito_mZX():
   q = QuantumRegister(2, 'q')
@@ -169,7 +175,9 @@ def circuito_mZX():
   circuit.measure(q[1], c[1])
   
   
-  roda_e_plota(circuit)
+  resposta = roda_e_plota(circuit)
+  
+  print("Os resultados para o operador mZX foram: {} \n".format(resposta))
   
   
 
