@@ -1,5 +1,6 @@
 from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
 from qiskit import BasicAer, execute
+from qiskit.visualization import plot_histogram
 
 from numpy import pi
 
@@ -24,9 +25,10 @@ def mZX(qc):
 
 def roda_e_plota(cir, backend = "qasm_simulator"):
   be = BasicAer.get_backend(backend)
-  job = execute(cir, be, shots=1)
+  job = execute(cir, be, shots=10)
   result = job.result()
   counts = result.get_counts(cir)
+  print(counts)
   plot_histogram([counts])
 
 def circuito_Y():
