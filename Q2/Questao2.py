@@ -3,7 +3,6 @@ from qiskit import BasicAer, execute
 
 from numpy import pi
 
-# NÃO ENVIAR !!!!!!!!!
 def Y(qc):
   qc.y(0)
 
